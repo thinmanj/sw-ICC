@@ -1,0 +1,6 @@
+Django>=2.0,<3.0
+psycopg2>=2.7,<3.0
+djangorestframework>=3.9,<4.0
+django-model-choices==1.0.0
+requests>=2.22<3.0
+jsonpath_rw_ext>=1.2<2.0
