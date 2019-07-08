@@ -20,7 +20,8 @@ def temperature(request, latitude, longitude):
         services = services & use
 
     if not services:
-        return Response({"message": "no options selected"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "No options selected"},
+                        status=status.HTTP_400_BAD_REQUEST)
 
     result = []
     for service in Services.objects.filter(name__in=services).all():
@@ -34,6 +35,10 @@ def temperature(request, latitude, longitude):
                       headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
         if data.status_code == requests.codes.ok:
             result.append(float(jp.match1(service.path, data.json())))
+
+    if not result:
+        return Response({"message": "No enough data to be processed"},
+                        status=status.HTTP_400_BAD_REQUEST)
 
     average = sum(result) / len(result)
 
