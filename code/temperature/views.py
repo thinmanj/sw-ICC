@@ -12,8 +12,7 @@ from .models import Services
 @api_view(['GET'])
 def temperature(request, latitude, longitude):
 
-
-    # Try to get the list of services the calls want to use
+    # Try to get the list of services the calls wants to use
     services = set(Services.objects.values_list("name", flat=True).distinct())
 
     use = request.GET.get('use', False)
@@ -25,7 +24,7 @@ def temperature(request, latitude, longitude):
         return Response({"message": "No options selected"},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    # call each service on sequence and collect it result
+    # call each service on sequence and collect its result
     result = []
     for service in Services.objects.filter(name__in=services).all():
         s = Template(service.url_pattern)
