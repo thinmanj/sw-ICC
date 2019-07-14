@@ -146,11 +146,11 @@ LOGGING = {
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
+            'formatter': 'verbose'
         },
     },
     'loggers': {
-        'temperature.models': {
+        'django': {
             'handlers': ['console'],
             'propagate': True,
         },

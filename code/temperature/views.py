@@ -8,7 +8,7 @@ from .models import Services
 import logging
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
 
 
 def validate(latitude, longitude):

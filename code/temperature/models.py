@@ -9,7 +9,7 @@ import requests
 import logging
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
 
 
 class Services(models.Model):
