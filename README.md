@@ -6,6 +6,12 @@ You need to have installed docker and docker-compose
 
 once you have it installed, then run the following:
 
+create an ".env" file to setup the following:
+
+	DEBUG=on
+	GOOGLE_MAPS_API_KEY=<google maps api key>
+
+
 $ docker-compose buil
 $ docker-compose run web python manage.py migrate
 $ docker-compose run web python manage.py loaddata init.json
