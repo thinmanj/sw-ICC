@@ -19,6 +19,6 @@ from temperature import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'(?P<longitude>-?\d+.?\d+)/(?P<latitude>-?\d+.?\d+)/', views.geo_location, name="temperature"),
+    re_path(r'(?P<longitude>-?\d+(.\d+)?)/(?P<latitude>-?\d+(.\d+)?)/', views.geo_location, name="temperature"),
     path('<int:zipcode>/', views.zipcode, name="zipcode")
 ]
