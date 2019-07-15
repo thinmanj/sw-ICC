@@ -11,6 +11,7 @@ create an ".env" file to setup the following:
 	DEBUG=on
 	GOOGLE_MAPS_API_KEY=<google maps api key>
 
+it should go to wetaher directory.
 
 $ docker-compose buil
 $ docker-compose run web python manage.py migrate
