@@ -40,4 +40,8 @@ or if you want you can create a new superuser by:
 
 $ docker-compose run web python manage.py createsuperuser
 
-Julio.
+to run the small tests just run:
+
+$ docker-compose run web python manage.py test -v 2
+
+the -v 2 is optional
